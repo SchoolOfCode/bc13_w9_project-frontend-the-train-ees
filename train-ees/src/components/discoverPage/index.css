@@ -5,9 +5,18 @@
     margin-right: 0;
 }
 
+/* Discover Page */
+
 div.discoverPage {
     display: flex;
     flex-flow: row nowrap;
+}
+
+/* Discover Body */
+
+div.discoverBody {
+    display: flex;
+    flex-flow: column nowrap;
 }
 
 div.discoverBody > div.discoverTitle h1 {
@@ -24,8 +33,32 @@ div.discoverBody > div.discoverBodyText p {
     font-weight: 300;
 }
 
+div.discoverBody > div.searchInput {
+    margin-top: 5rem;
+}
+
+/* Card */
+
+div.cardDisplay {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+/* Purple Section */
+
+div.purpleSection {
+    z-index: -1;
+    height: 100%;
+    float: right;
+}
+
+div.purpleSection img {
+    height: 100%;
+    border-radius: 30px 0px 0px 30px;
+}
+
 input{
-    width: 12rem;
+    width: 17rem;
     height: 3rem;
     border-radius: 15px;
     padding-left: 20px;

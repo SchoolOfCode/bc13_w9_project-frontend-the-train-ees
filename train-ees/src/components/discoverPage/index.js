@@ -8,20 +8,22 @@ export default function DiscoverPage({handleClick}){
     const [cards, setCards] = useState([{}]);
 
     async function getCards(input){
+        //console.log(input)
         let response = await fetch(`http://localhost:3000/api/cards?name=${input}`, {
             method: 'GET',
-            headers: {}
+            headers:{
+           
+            }
         });
         let data = await response.json();
-        console.log(data)
         setCards(data.payload)
     }
 
-    function handleKeyDown(e){   // enter pressed on input
+    async function handleKeyDown(e){   // enter pressed on input
         if (e.key !== "Enter") {
             return
         }
-        getCards(e.target.value)
+        await getCards(e.target.value)
     }
     
     return(
@@ -33,7 +35,7 @@ export default function DiscoverPage({handleClick}){
                 <p>Search for a bootcamper and connect with them.</p>
             </div>
             <Button handleClick={handleClick} buttonText={'+ New Card'}/>
-            <input type='text' placeholder="Search By Name" onKeyDown={handleKeyDown}/>
+            <input type='text' placeholder="Search By Name" onKeyDown={async(e)=>{await handleKeyDown(e)}}/>
             {cards.map((card, i) => (<DiscoverCard key={i} info={card}/>))}
         </div>
     )

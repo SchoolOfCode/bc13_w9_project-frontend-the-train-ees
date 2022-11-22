@@ -17,7 +17,7 @@ export default function DiscoverCard({info}){
                 <div className='cardBody'>
                     <div className='mediaItems'>
                         <div className='linkedin'>
-                            <img src={linkedin} alt="linkedin"/><h2>linkedin link</h2>
+                            <img src={linkedin} alt="linkedin"/><h2>linkedin username</h2>
                         </div>
                         <div className='github'>
                             <img src={github} alt="github"/><h2>github handle</h2>
@@ -40,14 +40,26 @@ export default function DiscoverCard({info}){
         return(
             <div className='discoverCard'>
                 <div className='cardHeader'>
-                    <h1>{info.firstName} <strong>{info.lastName}</strong></h1>
+                    <h1>{info.first_name} <strong>{info.last_name}</strong></h1>
                 </div>
                 <div className='cardBody'>
-                    <h2>{info.linkedin}</h2>
-                    <h2>{info.github}</h2>
-                    <h2>{info.phone}</h2>
-                    <h2>{info.email}</h2>
-                    <img src={info.image} alt="profile pic"/>
+                    <div className='mediaItems'>
+                        <div className='linkedin'>
+                            <img src={linkedin} alt="linkedin" /><h2>{info.linkedin_username}</h2>
+                        </div>
+                        <div className='github'>
+                            <img src={github} alt="github" /><h2>{info.github_username}</h2>
+                        </div>
+                        <div className='phone'>
+                            <img src={phone} alt="phone" /><h2>{info.phone}</h2>
+                        </div>
+                        <div className='email'>
+                            <img src={email} alt="email" /><h2>{info.email}</h2>
+                        </div>
+                        <div className="profilePicture">
+                            <img src={info.image} alt="profile pic"/>
+                        </div>
+                    </div>
                 </div>
             </div>
         )

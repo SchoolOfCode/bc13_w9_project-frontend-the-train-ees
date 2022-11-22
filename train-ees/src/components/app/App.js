@@ -1,5 +1,8 @@
-import logo from './logo.svg';
 import './App.css';
+
+import createPage from '../createPage'
+import discoverPage from '../discoverPage'
+
 
 function App() {
   return (

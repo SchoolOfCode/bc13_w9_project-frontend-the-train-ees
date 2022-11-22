@@ -26,14 +26,18 @@ export default function DiscoverPage({handleClick}){
     
     return(
         <div className = "discoverPage">
-            <h1>Discover Cards</h1>
+            <div className='discoverTitle'>
+                <h1>Discover Cards</h1>
+            </div>
             <div className="discoverBody">
                 <h2>Network with your peers!</h2>
                 <p>Create a card so fellow bootcampers can find you.</p>
                 <p>Search for a bootcamper and connect with them.</p>
             </div>
             <Button handleClick={handleClick} buttonText={'+ New Card'}/>
-            <input type='text' placeholder="Search By Name" onKeyDown={handleKeyDown}/>
+            <div className='searchInput'>
+                <input type='text' placeholder="Search By Name" onKeyDown={handleKeyDown}></input>
+            </div>
             {cards.map((card, i) => (<DiscoverCard key={i} info={card}/>))}
         </div>
     )

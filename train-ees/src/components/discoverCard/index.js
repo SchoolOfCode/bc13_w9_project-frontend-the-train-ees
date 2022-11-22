@@ -1,7 +1,7 @@
 
 import './index.css'
 
-export default function discoverCard(){
+export default function discoverCard({info}){
 
 
 }

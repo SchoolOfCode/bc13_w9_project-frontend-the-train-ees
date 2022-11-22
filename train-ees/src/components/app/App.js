@@ -1,7 +1,7 @@
 import './App.css';
 
-import createPage from '../createPage'
-import discoverPage from '../discoverPage'
+import CreatePage from '../createPage'
+import DiscoverPage from '../discoverPage'
 
 
 function App() {

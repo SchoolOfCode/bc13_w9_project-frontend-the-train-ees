@@ -1,11 +1,11 @@
 
 import './index.css'
-import discoverCard from '../discoverCard'
 import Button from '../button'
+import discoverCard from '../discoverCard';
 import {useState} from 'react'
 
 export default function DiscoverPage(){
-    const [cards, setCards] = useState([]);
+    const [cards, setCards] = useState([{}]);
 
     async function getCards(input){
         let response = await fetch(`http://localhost:3000/api/?search=${input}`, {
@@ -33,7 +33,7 @@ export default function DiscoverPage(){
             </div>
             <Button handleClick={()=>{}} buttonText={'+ New Card'}/>
             <input type='text' placeholder="search by name" onKeyDown={handleKeyDown}/>
-            {cards.map((card, i) => <discoverCard key={i} info={card}/>)}
+            {cards.map((card, i) => (<discoverCard key={i} info={card}/>))}
         </div>
     )
 }

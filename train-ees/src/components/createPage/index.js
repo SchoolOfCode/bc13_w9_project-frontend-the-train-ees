@@ -13,13 +13,14 @@ export default function CreatePage({ handleClickSubmit }){
     const [image, setImage] = useState('')
 
     async function handleClick() {
-        let response = await fetch("http://localhost:3000/api/", {
+        let response = await fetch("http://localhost:3000/api/cards", {
             method: "POST",
             body: {
-                firstName: firstName,
-                lastName: lastName,
-                linkedin: linkedin,
-                github: github,
+                first_name: firstName,
+                last_name: lastName,
+                linkedin_username: linkedin,
+                github_username: github,
+                profession: "test",
                 phone: phone,
                 email: email,
                 image: image

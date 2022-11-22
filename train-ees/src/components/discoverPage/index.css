@@ -1,5 +1,27 @@
 :root {
     background-color: #F2F2F2;
+    padding: 30px;
+    padding-right: 0;
+    margin-right: 0;
+}
+
+div.discoverPage {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+div.discoverBody > div.discoverTitle h1 {
+    font-size: 112px;
+}
+
+div.discoverBody > div.discoverTitle2 h2 {
+    font-size: 40px;
+    font-weight: 500;
+}
+
+div.discoverBody > div.discoverBodyText p {
+    font-size: 20px;
+    font-weight: 300;
 }
 
 input{

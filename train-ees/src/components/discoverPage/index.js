@@ -1,7 +1,7 @@
 
 import './index.css'
 import Button from '../button'
-import discoverCard from '../discoverCard';
+import DiscoverCard from '../DiscoverCard';
 import {useState} from 'react'
 
 export default function DiscoverPage(){
@@ -33,7 +33,7 @@ export default function DiscoverPage(){
             </div>
             <Button handleClick={()=>{}} buttonText={'+ New Card'}/>
             <input type='text' placeholder="search by name" onKeyDown={handleKeyDown}/>
-            {cards.map((card, i) => (<discoverCard key={i} info={card}/>))}
+            {cards.map((card, i) => (<DiscoverCard key={i} info={card}/>))}
         </div>
     )
 }

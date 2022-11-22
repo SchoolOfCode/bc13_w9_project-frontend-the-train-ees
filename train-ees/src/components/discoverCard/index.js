@@ -11,10 +11,18 @@ export default function discoverCard({info}){
                     <h1>first name <strong>last name</strong></h1>
                 </div>
                 <div className='cardBody'>
-                    <h2>linkedin link</h2>
-                    <h2>github handle</h2>
-                    <h2>phone number</h2>
-                    <h2>email address</h2>
+                    <div className='linkedin'>
+                        <img src="../images/linkedin.png" alt="linkedin"></img><h2>linkedin link</h2>
+                    </div>
+                    <div className='github'>
+                        <img src="../images/github.png" alt="github"></img><h2>github handle</h2>
+                    </div>
+                    <div className='phone'>
+                        <img src="../images/phone.png" alt="phone"></img><h2>phone number</h2>
+                    </div>
+                    <div className='email'>
+                        <img src="../images/email.png" alt="email"></img><h2>email address</h2>
+                    </div>
                     <img src={image} alt="profile pic" />
                 </div>
             </div>

@@ -6,7 +6,7 @@ import github from '../images/github.png'
 import linkedin from '../images/linkedin.png'
 import user from '../images/user.png'
 
-export default function discoverCard({info}){
+export default function DiscoverCard({info}){
     console.log(info)
     if(Object.keys(info).length === 0){  // display default
         return (
@@ -47,7 +47,7 @@ export default function discoverCard({info}){
                     <h2>{info.github}</h2>
                     <h2>{info.phone}</h2>
                     <h2>{info.email}</h2>
-                    <img src={info.url} alt="profile pic"/>
+                    <img src={info.image} alt="profile pic"/>
                 </div>
             </div>
         )

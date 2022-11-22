@@ -12,8 +12,6 @@ div.discoverCard {
     border-radius: 30px;
     box-shadow: 0px 0px 21px 6px rgba(0, 0, 0, 0.5);
     width: max-content;
-    justify-content: center;
-    align-items: center;
 }
 
 /* Card Header */
@@ -39,7 +37,7 @@ div.cardHeader h1 strong {
 div.cardBody {
     display: flex;
     flex-flow: row wrap;
-    gap: 140px;
+    gap: 150px;
 }
 
 div.cardBody > div.mediaItems {

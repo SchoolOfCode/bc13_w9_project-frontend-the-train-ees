@@ -1,5 +1,5 @@
 import "./index.css"
 
-export default function button({handleClick, buttonText}){
+export default function Button({handleClick, buttonText}){
     return <button onClick={handleClick}>{buttonText}</button>
 }

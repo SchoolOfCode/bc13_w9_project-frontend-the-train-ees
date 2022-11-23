@@ -3,7 +3,7 @@ import './index.css'
 import Button from '../button'
 import DiscoverCard from '../discoverCard';
 import {useState} from 'react'
-import backgroundGif from '../images/purple_BG.gif'
+//import backgroundGif from '../images/purple_BG.gif'
 
 export default function DiscoverPage({handleClick}){
     const [cards, setCards] = useState([{}]);

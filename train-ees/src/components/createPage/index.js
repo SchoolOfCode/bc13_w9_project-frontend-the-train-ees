@@ -24,8 +24,8 @@ export default function CreatePage({ handleClickSubmit }){
         let response = await fetch("http://localhost:3000/api/cards", {
             method: "POST",
             body: JSON.stringify({
-                "first_name": `${firstName}`,
-                "last_name": `${lastName}`,
+                "first_name": `${firstName[0].toUpperCase() + firstName.slice(1)}`,
+                "last_name": `${lastName[0].toUpperCase() + lastName.slice(1) }`,
                 "linkedin_username": `${linkedin}`,
                 "github_username": `${github}`,
                 "profession": "test",

@@ -56,7 +56,9 @@ div.cardDisplay {
 }
 
 div.cardDisplay > div.createBtn {
-    padding: 30px;
+    padding-top: 20px;
+    margin-left: 385px;
+    text-align: right;
 }
 
 /* Discover Card Container */

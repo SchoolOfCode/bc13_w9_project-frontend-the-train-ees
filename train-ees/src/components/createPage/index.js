@@ -84,6 +84,7 @@ export default function CreatePage({ handleClickSubmit }) {
             professionChange={setProfession}
             passwordChange={setPassword}
           />
+
         </div>
       </div>
     </div>

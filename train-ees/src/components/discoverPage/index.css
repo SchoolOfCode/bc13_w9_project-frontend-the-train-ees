@@ -3,16 +3,25 @@
     /* padding: 30px; */
     padding-right: 0;
     margin-right: 0;
-    background-image: linear-gradient(105deg, #f91a1a, #1a9ff9, #25f91a);
+    background-image: linear-gradient(-30deg, #E84F7C, #C77A76, #682FE5);
     background-repeat: no-repeat;
     background-position: top right;
-    background-size: 30% 1000%;
+    background-size: 30% 150%;
     -webkit-animation: AnimationName 47s ease infinite;
     animation: AnimationName 47s ease infinite;
     border-top-left-radius: 30px;
     padding-top: 0;
     margin-top: 0;
     padding-bottom: 0;
+}
+
+.white-grad {
+    background: 
+      linear-gradient(rgb(255, 255, 255) 0 0) padding-box,
+      linear-gradient(to right, #9c20aa, #fb3570) border-box;
+    color: #313149;
+    border: 3px solid transparent;
+    border-radius: 15px;
 }
 
 /* Discover Page */
@@ -37,6 +46,10 @@ div.discoverBody > div.discoverTitle h1 {
     font-size: 112px;
     margin-left: 7vw;
     text-align: left;
+    background: -webkit-linear-gradient(right, #E84F7C, #682FE5);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 div.discoverBody > div.discoverTitle2 h2 {
@@ -72,7 +85,7 @@ div.cardDisplay {
 }
 
 div.cardDisplay > div.createBtn {
-    padding-left: 25vw;
+    padding-left: 300px;
     padding-top: 14vh;
 }
 
@@ -87,6 +100,14 @@ div.discoverCardContainer {
 
 div.discoverCardContainer > div:last-child() {
     margin-bottom: 50px;
+}
+
+div.searchInput > img {
+    height: 25px;
+    width: 25px;
+    position: absolute;
+    margin-left: 26rem;
+    margin-top: 1.4rem;
 }
 
 /* Purple Section */
@@ -105,21 +126,27 @@ div.purpleSection img {
 
 .inputSearch{
     width: 28rem;
-    height: 3rem;
-    border-radius: 15px;
-    padding-left: 20px;
-    font-size: 16px;
-    border: 5px solid transparent;
-    background: white url('../images/search.png') right no-repeat;
+    height: 3.2rem;
+    padding-left: 2px;
+    font-size: 20px;
+    background: rgb(255, 255, 255) url('../images/search.png') right no-repeat, linear-gradient(to right, #9c20aa, #fb3570) border-box;
     background-size: 30px;
     background-position: 90%;
-    box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.5);
-    transition: 0.5s;
+    background-origin: border-box;
+	background-clip: content-box, border-box;
+	background-size: cover;
+    box-shadow: 0px 0px 7px 2px rgba(195, 65, 221, 0.5);
+    transition: 0.3s;
     outline: 0;
 }
 
-.inputSearch:hover {
+/* .inputSearch:hover {
     transition: 0.5s;
-    border: 5px solid #D2252E;
+    border: 3px solid rgba(255, 255, 255, 0.548);
     outline: 0;
+} */
+
+.inputSearch:hover {
+    transition: 0.3s;
+    box-shadow: 0px 0px 10px 4px rgba(195, 65, 221, 0.788);
 }

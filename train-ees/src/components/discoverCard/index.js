@@ -7,7 +7,6 @@ import linkedin from '../images/linkedin.png'
 import user from '../images/user.png'
 
 export default function DiscoverCard({info}){
-    console.log(info)
     if(Object.keys(info).length === 0){  // display default
         return (
             <div className='discoverCard'>

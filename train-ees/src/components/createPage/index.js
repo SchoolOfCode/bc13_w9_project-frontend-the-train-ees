@@ -13,21 +13,33 @@ export default function CreatePage({ handleClickSubmit }){
     const [image, setImage] = useState('')
 
     async function handleClick() {
+        /*console.log({
+            first_name: firstName,
+            last_name: lastName,
+            linkedin_username: linkedin,
+            github_username: github,
+            phone: phone,
+            email: email,
+        })*/
         let response = await fetch("http://localhost:3000/api/cards", {
             method: "POST",
-            body: {
-                first_name: firstName,
-                last_name: lastName,
-                linkedin_username: linkedin,
-                github_username: github,
-                profession: "test",
-                phone: phone,
-                email: email,
-                image: image
+            body: JSON.stringify({
+                "first_name": `${firstName}`,
+                "last_name": `${lastName}`,
+                "linkedin_username": `${linkedin}`,
+                "github_username": `${github}`,
+                "profession": "test",
+                "phone": `${phone}`,
+                "email": `${email}`,
+                "image": `https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Macaca_nigra_self-portrait_large.jpg/1200px-Macaca_nigra_self-portrait_small.jpg`
+            }),
+            headers: {
+                'Content-Type': 'application/json'
             }
         })
         handleClickSubmit()
-        return response.json()
+        let data = await response.json()
+        return await data.success;
     }
 
     return(
@@ -38,7 +50,7 @@ export default function CreatePage({ handleClickSubmit }){
                 <p>Create a card so fellow bootcampers can find you.</p>
                 <p>Search for a bootcamper and connect with them.</p>
             </div>
-            <Button handleClick={handleClick} buttonText={'Submit'} />
+            <Button handleClick={async()=>{await handleClick()}} buttonText={'Submit'} />
             <CreateCard firstNameChange={setFirstName}
                         lastNameChange = {setLastName}
                         linkedinChange = {setLinkedin}

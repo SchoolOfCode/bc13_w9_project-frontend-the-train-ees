@@ -9,13 +9,8 @@ function App() {
   const [createPage, setCreatePage] = useState(false)
 
   function swapPage(){
-    if(discoverPage){
-      setDiscoverPage(false)
-      setCreatePage(true)
-    }else{
-      setDiscoverPage(true)
-      setCreatePage(false)
-    }
+    setDiscoverPage(!discoverPage)
+    setCreatePage(!createPage)
   }
 
   return (

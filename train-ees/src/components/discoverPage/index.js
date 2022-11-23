@@ -24,7 +24,11 @@ export default function DiscoverPage({handleClick}){
         if (e.key !== "Enter") {
             return
         }
-        await getCards(e.target.value)
+        let input = e.target.value;
+        if(input ==="" || input===" "){
+            return
+        }
+        await getCards(input)
     }
     
     return(
@@ -37,8 +41,8 @@ export default function DiscoverPage({handleClick}){
                     <h2>Network with your peers!</h2>
                 </div>
                 <div className='discoverBodyText'>
-                    <p>Create a card so fellow bootcampers can find you.<br/>
-                    Search for a bootcamper and connect with them.</p>
+                    <p>Create a card so fellow bootcampers can find you.</p>
+                    <p>Search for a bootcamper and connect with them.</p>
                 </div>
                 <div className='searchInput'>
                 <input type='text' className="inputSearch" placeholder="Search By Name" onKeyDown={async(e)=>{await handleKeyDown(e)}}/>

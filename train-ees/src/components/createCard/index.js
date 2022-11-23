@@ -4,9 +4,19 @@ import email from '../images/email.png'
 import phone from '../images/phone.png'
 import github from '../images/github.png'
 import linkedin from '../images/linkedin.png'
-import user from '../images/user.png'
+//import user from '../images/user.png'
+import plus from '../images/plus icon.png'
+import { useState } from 'react'
 
 export default function CreateCard(props){
+    const [image, setImage] = useState(plus)
+
+    function handleClick(){
+            let url = prompt("Enter url to Linkedin profile picture")
+            if(url !== null || url === "" || url===" "){
+                setImage(url)
+            }
+        };
 
     return(
         <div className='discoverCard'>
@@ -27,6 +37,9 @@ export default function CreateCard(props){
                     </div>
                     <div className='email'>
                         <img src={email} alt="email" /><input type='text' placeholder='email' onChange={(e) => { props.emailChange(e.target.value) }} />
+                    </div>
+                    <div className="profilePicture">
+                        <img src={image} onClick={handleClick} alt="profile pic" />
                     </div>
                 </div>
             </div>

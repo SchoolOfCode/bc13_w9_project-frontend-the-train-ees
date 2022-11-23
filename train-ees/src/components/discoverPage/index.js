@@ -48,13 +48,11 @@ export default function DiscoverPage({handleClick}){
                 <div className='createBtn'>
                     <Button handleClick={handleClick} buttonText={'+ New Card'}/>
                 </div>
-                <div className='discoverCard'>
+                <div className='discoverCardContainer'>
                     {cards.map((card, i) => (<DiscoverCard key={i} info={card}/>))}
                 </div>
             </div>
-            <div className='purpleSection'>
-                <img src={backgroundGif} alt="background"/>
-            </div>
+            {/* <footer className='space'></footer> */}
         </div>
     )
 }

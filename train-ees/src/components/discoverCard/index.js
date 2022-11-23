@@ -55,9 +55,9 @@ export default function DiscoverCard({info}){
                         <div className='email'>
                             <img src={email} alt="email" /><h2>{info.email}</h2>
                         </div>
-                        <div className="profilePicture">
-                            <img src={info.image} alt="profile pic"/>
-                        </div>
+                    </div>
+                    <div className="profilePicture">
+                        <img src={info.image} alt="profile pic"/>
                     </div>
                 </div>
             </div>

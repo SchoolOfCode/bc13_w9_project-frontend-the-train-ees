@@ -1,15 +1,16 @@
-import "./App.css";
-import { useState } from "react";
-import CreatePage from "../createPage";
-import DiscoverPage from "../discoverPage";
+import './App.css';
+import { useState } from 'react';
+import CreatePage from '../createPage'
+import DiscoverPage from '../discoverPage'
+
 
 function App() {
   const [discoverPage, setDiscoverPage] = useState(true);
-  const [createPage, setCreatePage] = useState(false);
+  const [createPage, setCreatePage] = useState(false)
 
-  function swapPage() {
-    setDiscoverPage(!discoverPage);
-    setCreatePage(!createPage);
+  function swapPage(){
+    setDiscoverPage(!discoverPage)
+    setCreatePage(!createPage)
   }
 
   return (

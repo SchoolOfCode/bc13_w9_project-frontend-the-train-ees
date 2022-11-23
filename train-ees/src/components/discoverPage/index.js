@@ -1,3 +1,4 @@
+
 import './index.css'
 import Button from '../button'
 import DiscoverCard from '../discoverCard';
@@ -21,138 +22,46 @@ export default function DiscoverPage({handleClick}){
             setCards(data.payload)
         }
     }
-    await getCards(input);
-  }
-  
-  async function handleKeyDown(e) 
-  // enter pressed on input
-  if (e.key !== "Enter") {
-    return;
-  }
-  let input = e.target.value;
-  if (input === "" || input === " ") {
-    return;
 
-  async function pressLogIn() {
-    if (userData === null) {
-      const emailInput = prompt("Enter your email");
-      let response = await fetch(
-        `http://localhost:3000/api/cards/?email=${emailInput}`,
-        {
-          method: "GET",
-          headers: {},
+    async function handleKeyDown(e){   // enter pressed on input
+        if (e.key !== "Enter") {
+            return
         }
-      );
-      let data = await response.json();
-      if (data.payload === undefined) {
-        alert("This email doesn't have a card");
-      } else {
-        let correctPass = data.payload.password;
-        let logInData = await data.payload;
-        const guessPass = prompt("Enter your password");
-        if (correctPass === guessPass) {
-          setUserData(logInData);
-        } else {
-          alert("Wrong password");
+        let input = e.target.value;
+        if(input ==="" || input===" "){
+            return
         }
-      }
-    } else {
-      setUserData(null);
+        await getCards(input)
     }
-  }
-
-  async function deleteUser() {
-    // make fetch request to delete using id
-    let response = await fetch(
-      `http://localhost:3000/api/cards/${userData.card_id}`,
-      {
-        method: "DELETE",
-        headers: {},
-      }
-    );
-    let data = await response.json();
-    // reset userData to null
-    setUserData(null);
-  }
-
-  if (userData === null) {
-    return (
-      <div className="discoverPage">
-        <div className="discoverBody">
-          <div className="discoverTitle">
-            <h1>Discover Cards</h1>
-          </div>
-          <div className="discoverTitle2">
-            <h2>Network with your peers!</h2>
-          </div>
-          <div className="discoverBodyText">
-            <p>Create a card so fellow bootcampers can find you.</p>
-            <p>Search for a bootcamper and connect with them.</p>
-          </div>
-          <div className="searchInput">
-            <input type='text' className="inputSearch white-grad" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Search By Name" onKeyDown={async(e)=>{await handleKeyDown(e)}}/>
-          </div>
+    
+    return(
+        <div className = "discoverPage">
+            <div className="discoverBody">
+                <div className='discoverTitle'>
+                    <h1>Discover Cards</h1>
+                </div>
+                <div className='discoverTitle2'>
+                    <h2>Network with your peers!</h2>
+                </div>
+                <div className='discoverBodyText'>
+                    <p>Create a card so fellow bootcampers can find you.</p>
+                    <p>Search for a bootcamper and connect with them.</p>
+                </div>
+                <div className='searchInput'>
+                    <img src={search} alt="search"/>
+                    <input type='text' className="inputSearch white-grad" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Search By Name" onKeyDown={async(e)=>{await handleKeyDown(e)}}/>
+                </div>
+            </div>
+            <div className='cardDisplay'>
+                <div className='createBtn'>
+                    <Button handleClick={handleClick} buttonText={'+ New Card'}/>
+                </div>
+                <div className='discoverCardContainer'>
+                    {cards.map((card, i) => (<DiscoverCard key={i} info={card}/>))}
+                </div>
+            </div>
+            <div className='whiteBg'></div>
+            {/* <footer className='space'></footer> */}
         </div>
-        <div className="cardDisplay">
-          <div className="createBtn">
-            <Button handleClick={handleClick} buttonText={"+ New Card"} />
-            <Button handleClick={pressLogIn} buttonText={"Log In and Edit"} />
-          </div>
-          <div className="discoverCardContainer">
-            {cards.map((card, i) => (
-              <DiscoverCard key={i} info={card} />
-            ))}
-          </div>
-        </div>
-        <div className="whiteBg"></div>
-        {/* <footer className='space'></footer> */}
-      </div>
-    );
-  } else {
-    return (
-      <div className="discoverPage">
-        <div className="discoverBody">
-          <div className="discoverTitle">
-            <h1>Discover Cards</h1>
-          </div>
-          <div className="discoverTitle2">
-            <h2>Network with your peers!</h2>
-          </div>
-          <div className="discoverBodyText">
-            <p>Create a card so fellow bootcampers can find you.</p>
-            <p>Search for a bootcamper and connect with them.</p>
-          </div>
-          <div className="searchInput">
-            <input
-              type="text"
-              className="inputSearch"
-              placeholder="Search By Name"
-              onKeyDown={async (e) => {
-                await handleKeyDown(e);
-              }}
-            />
-          </div>
-          <div className="loggedInUser">
-            <DiscoverCard key={1000} info={userData} />
-          </div>
-          <div className="updateButton">
-            <Button handleClick={deleteUser} buttonText={"Delete your card"} />
-          </div>
-        </div>
-
-        <div className="cardDisplay">
-          <div className="createBtn">
-            <Button handleClick={handleClick} buttonText={"+ New Card"} />
-            <Button handleClick={pressLogIn} buttonText={"Log Out"} />
-          </div>
-          <div className="discoverCardContainer">
-            {cards.map((card, i) => (
-              <DiscoverCard key={i} info={card} />
-            ))}
-          </div>
-        </div>
-        <div className="whiteBg"></div>
-      </div>
-    );
-  }
+    )
 }

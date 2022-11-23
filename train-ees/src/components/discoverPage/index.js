@@ -14,12 +14,13 @@ export default function DiscoverPage({handleClick}){
         //console.log(input)
         let response = await fetch(`http://localhost:3000/api/cards?name=${input}`, {
             method: 'GET',
-            headers:{
-           
-            }
         });
         let data = await response.json();
-        setCards(data.payload)
+        if(data.payload.length === 0){
+            setCards([{}])
+        }else{
+            setCards(data.payload)
+        }
     }
 
     async function handleKeyDown(e){   // enter pressed on input

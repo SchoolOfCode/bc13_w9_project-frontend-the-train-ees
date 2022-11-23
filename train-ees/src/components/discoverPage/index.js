@@ -1,37 +1,41 @@
-import './index.css'
-import Button from '../button'
-import DiscoverCard from '../discoverCard';
-import {useState} from 'react'
-import search from '../images/search.png'
+import "./index.css";
+import Button from "../button";
+import DiscoverCard from "../discoverCard";
+import { useState } from "react";
+// import search from "../images/search.png";
 //import backgroundGif from '../images/purple_BG.gif'
 
+export default function DiscoverPage({ handleClick }) {
+  const [cards, setCards] = useState([{}]);
+  const [userData, setUserData] = useState(null);
 
-export default function DiscoverPage({handleClick}){
-    const [cards, setCards] = useState([{}]);
+  async function getCards(input) {
+    //console.log(input)
+    let response = await fetch(
+      `http://localhost:3000/api/cards?name=${input}`,
+      {
+        method: "GET",
+      }
+    );
+    let data = await response.json();
+    if (data.payload.length === 0) {
+      setCards([{}]);
+    } else {
+      setCards(data.payload);
+    }
+  }
 
-    async function getCards(input){
-        //console.log(input)
-        let response = await fetch(`http://localhost:3000/api/cards?name=${input}`, {
-            method: 'GET',
-        });
-        let data = await response.json();
-        if(data.payload.length === 0){
-            setCards([{}])
-        }else{
-            setCards(data.payload)
-        }
+  async function handleKeyDown(e) {
+    // enter pressed on input
+    if (e.key !== "Enter") {
+      return;
+    }
+    let input = e.target.value;
+    if (input === "" || input === " ") {
+      return;
     }
     await getCards(input);
   }
-  
-  async function handleKeyDown(e) 
-  // enter pressed on input
-  if (e.key !== "Enter") {
-    return;
-  }
-  let input = e.target.value;
-  if (input === "" || input === " ") {
-    return;
 
   async function pressLogIn() {
     if (userData === null) {
@@ -90,7 +94,14 @@ export default function DiscoverPage({handleClick}){
             <p>Search for a bootcamper and connect with them.</p>
           </div>
           <div className="searchInput">
-            <input type='text' className="inputSearch white-grad" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Search By Name" onKeyDown={async(e)=>{await handleKeyDown(e)}}/>
+            <input
+              type="text"
+              className="inputSearch white-grad"
+              placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Search By Name"
+              onKeyDown={async (e) => {
+                await handleKeyDown(e);
+              }}
+            />
           </div>
         </div>
         <div className="cardDisplay">
@@ -125,8 +136,8 @@ export default function DiscoverPage({handleClick}){
           <div className="searchInput">
             <input
               type="text"
-              className="inputSearch"
-              placeholder="Search By Name"
+              className="inputSearch white-grad"
+              placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Search By Name"
               onKeyDown={async (e) => {
                 await handleKeyDown(e);
               }}

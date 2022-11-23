@@ -11,6 +11,7 @@ export default function CreatePage({ handleClickSubmit }){
     const [phone, setPhone] = useState('')
     const [email, setEmail] = useState('')
     const [image, setImage] = useState('')
+    const [profession, setProfession] = useState('')
 
     async function handleClick() {
         /*console.log({
@@ -28,7 +29,7 @@ export default function CreatePage({ handleClickSubmit }){
                 "last_name": `${lastName[0].toUpperCase() + lastName.slice(1) }`,
                 "linkedin_username": `${linkedin}`,
                 "github_username": `${github}`,
-                "profession": "test",
+                "profession": `${profession}`,
                 "phone": `${phone}`,
                 "email": `${email}`,
                 "image": `${image}`
@@ -73,6 +74,7 @@ export default function CreatePage({ handleClickSubmit }){
                                 phoneChange = {setPhone}
                                 emailChange = {setEmail}
                                 imageChange = {setImage}
+                                professionChange = {setProfession}
                     />
                 </div>
             </div>

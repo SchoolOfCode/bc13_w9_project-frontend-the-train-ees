@@ -20,7 +20,7 @@ div.discoverCard {
 div.cardHeader {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: left;
+    justify-content: space-between;
     align-items: center;
     background-color: #DCDCDC;
     width: 100%;
@@ -29,7 +29,15 @@ div.cardHeader {
 }
 
 div.cardHeader > input:first-child {
-    margin-left: 2.5rem;
+    margin-left: 1rem;
+}
+
+div.cardHeader > input:last-child {
+    margin-right: 1rem;
+}
+
+div.cardHeader > p {
+    margin-right: 1.5rem;
 }
 
 div.cardHeader h1 {

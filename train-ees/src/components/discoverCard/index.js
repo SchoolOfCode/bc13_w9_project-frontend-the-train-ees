@@ -14,7 +14,7 @@ export default function DiscoverCard({ info }) {
           <h1>
             first name <strong>last name</strong>
           </h1>
-            <h2>profession</h2>
+          <p>profession</p>
         </div>
         <div className="cardBody">
           <div className="mediaItems">
@@ -50,8 +50,8 @@ export default function DiscoverCard({ info }) {
         <div className="cardHeader">
           <h1>
             {info.first_name} <strong>{info.last_name}</strong>
-            <h2>{info.profession}</h2>
           </h1>
+          <p>{info.profession}</p>
         </div>
         <div className="cardBody">
           <div className="mediaItems">

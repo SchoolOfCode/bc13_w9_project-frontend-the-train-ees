@@ -15,6 +15,7 @@ export default function CreateCard(props){
             let url = prompt("Enter url to Linkedin profile picture")
             if(url !== null || url === "" || url===" "){
                 setImage(url)
+                props.imageChange(url)
             }
         };
 

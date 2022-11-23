@@ -31,7 +31,7 @@ export default function CreatePage({ handleClickSubmit }){
                 "profession": "test",
                 "phone": `${phone}`,
                 "email": `${email}`,
-                "image": `https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Macaca_nigra_self-portrait_large.jpg/1200px-Macaca_nigra_self-portrait_small.jpg`
+                "image": `${image}`
             }),
             headers: {
                 'Content-Type': 'application/json'

@@ -1,0 +1,108 @@
+:root {
+    background-color: #F2F2F2;
+    padding: 30px;
+    padding-right: 0;
+    margin-right: 0;
+    background-image: url('../images/purple_BG.gif');
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: 30% 1000%;
+    padding-top: 0;
+    margin-top: 0;
+}
+
+/* Discover Page */
+
+div.CreatePage {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    /* align-items: center; */
+}
+
+/* Discover Body */
+
+div.CreateBody {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+div.CreateBody>div.createTitle h1 {
+    font-size: 112px;
+}
+
+div.CreateBody>div.createTitle2 h2 {
+    font-size: 40px;
+    font-weight: 500;
+}
+
+div.CreateBody>div.createBodyText p {
+    font-size: 20px;
+    font-weight: 300;
+}
+
+div.CreateBody>div.searchInput {
+    margin-top: 5rem;
+}
+
+/* Card */
+
+div.cardDisplay {
+    display: flex;
+    flex-flow: column nowrap;
+    /* height: 100vh; */
+    justify-content: center;
+    /* margin-top: 15%; */
+}
+
+div.cardDisplay>div.createBtn {
+    padding: 30px;
+}
+
+/* Discover Card Container */
+
+div.discoverCardContainer {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 40px;
+    height: 100vh;
+}
+
+div.discoverCardContainer>div:last-child() {
+    margin-bottom: 50px;
+}
+
+/* Purple Section */
+/* 
+div.purpleSection {
+    z-index: -1;
+    height: 100%;
+    float: right;
+}
+
+div.purpleSection img {
+    height: 100vh;
+    width: 30vw;
+    border-radius: 30px 0px 0px 30px;
+} */
+
+.inputSearch {
+    width: 17rem;
+    height: 3rem;
+    border-radius: 15px;
+    padding-left: 20px;
+    font-size: 16px;
+    border: 5px solid transparent;
+    background: white url('../images/search.png') right no-repeat;
+    background-size: 30px;
+    background-position: 90%;
+    box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.5);
+    transition: 0.5s;
+    outline: 0;
+}
+
+.inputSearch:hover {
+    transition: 0.5s;
+    border: 5px solid rgb(211, 66, 167);
+    outline: 0;
+}

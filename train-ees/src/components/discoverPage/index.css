@@ -48,6 +48,7 @@ div.discoverBody > div.discoverTitle h1 {
     text-align: left;
     background: -webkit-linear-gradient(right, #E84F7C, #682FE5);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 

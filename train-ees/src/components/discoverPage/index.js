@@ -41,7 +41,7 @@ export default function DiscoverPage({handleClick}){
                     Search for a bootcamper and connect with them.</p>
                 </div>
                 <div className='searchInput'>
-                <input type='text' placeholder="Search By Name" onKeyDown={async(e)=>{await handleKeyDown(e)}}/>
+                <input type='text' className="inputSearch" placeholder="Search By Name" onKeyDown={async(e)=>{await handleKeyDown(e)}}/>
                 </div>
             </div>
             <div className='cardDisplay'>

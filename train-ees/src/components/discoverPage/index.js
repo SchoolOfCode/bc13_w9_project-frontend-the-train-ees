@@ -45,7 +45,7 @@ export default function DiscoverPage({handleClick}){
                     <p>Search for a bootcamper and connect with them.</p>
                 </div>
                 <div className='searchInput'>
-                <input type='text' className="inputSearch" placeholder="Search By Name" onKeyDown={async(e)=>{await handleKeyDown(e)}}/>
+                    <input type='text' className="inputSearch" placeholder="Search By Name" onKeyDown={async(e)=>{await handleKeyDown(e)}}/>
                 </div>
             </div>
             <div className='cardDisplay'>
@@ -56,6 +56,7 @@ export default function DiscoverPage({handleClick}){
                     {cards.map((card, i) => (<DiscoverCard key={i} info={card}/>))}
                 </div>
             </div>
+            <div className='whiteBg'></div>
             {/* <footer className='space'></footer> */}
         </div>
     )

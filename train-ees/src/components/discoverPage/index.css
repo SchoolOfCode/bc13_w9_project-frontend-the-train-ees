@@ -1,14 +1,18 @@
 :root {
     background-color: #F2F2F2;
-    padding: 30px;
+    /* padding: 30px; */
     padding-right: 0;
     margin-right: 0;
-    background-image: url('../images/purple_BG.gif');
+    background-image: linear-gradient(105deg, #f91a1a, #1a9ff9, #25f91a);
     background-repeat: no-repeat;
     background-position: top right;
     background-size: 30% 1000%;
+    -webkit-animation: AnimationName 47s ease infinite;
+    animation: AnimationName 47s ease infinite;
+    border-top-left-radius: 30px;
     padding-top: 0;
     margin-top: 0;
+    padding-bottom: 0;
 }
 
 /* Discover Page */
@@ -25,24 +29,35 @@ div.discoverPage {
 div.discoverBody {
     display: flex;
     flex-flow: column nowrap;
+    /* background-color: #F2F2F2; */
+    /* padding: 100px; */
 }
 
 div.discoverBody > div.discoverTitle h1 {
     font-size: 112px;
+    margin-left: 7vw;
+    text-align: left;
 }
 
 div.discoverBody > div.discoverTitle2 h2 {
     font-size: 40px;
     font-weight: 500;
+    margin-top: -4vh;
+    margin-left: 9vw;
+    text-align: left;
 }
 
 div.discoverBody > div.discoverBodyText p {
     font-size: 20px;
     font-weight: 300;
+    margin-left: 9vw;
+    text-align: left;
 }
 
 div.discoverBody > div.searchInput {
-    margin-top: 5rem;
+    margin-top: 2.9rem;
+    text-align: left;
+    margin-left: 9vw;
 }
 
 /* Card */
@@ -53,10 +68,12 @@ div.cardDisplay {
     /* height: 100vh; */
     justify-content: center;
     /* margin-top: 15%; */
+    margin-right: 8vw;
 }
 
 div.cardDisplay > div.createBtn {
-    padding: 30px;
+    padding: 15vh 0px 20px 21vw;
+    justify-content: right;
 }
 
 /* Discover Card Container */
@@ -87,7 +104,7 @@ div.purpleSection img {
 } */
 
 .inputSearch{
-    width: 17rem;
+    width: 28rem;
     height: 3rem;
     border-radius: 15px;
     padding-left: 20px;
@@ -106,3 +123,14 @@ div.purpleSection img {
     border: 5px solid rgb(211, 66, 167);
     outline: 0;
 }
+
+/* @-webkit-keyframes AnimationName {
+    0%{background-position:0% 0%}
+    50%{background-position:93% 100%}
+    100%{background-position:0% 0%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 0%}
+    50%{background-position:93% 100%}
+    100%{background-position:0% 0%}
+} */

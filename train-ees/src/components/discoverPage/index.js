@@ -34,66 +34,115 @@ export default function DiscoverPage({ handleClick }) {
   }
 
   async function pressLogIn() {
-    const emailInput = prompt("Enter your email");
-    let response = await fetch(
-      `http://localhost:3000/api/cards/?email=${emailInput}`,
-      {
-        method: "GET",
-        headers: {},
-      }
-    );
-    let data = await response.json();
-    if (data.payload === undefined) {
-      alert("This email doesn't have a card");
-    } else {
-      let correctPass = data.payload.password;
-      let logInData = await data.payload;
-      const guessPass = prompt("Enter your password");
-      if (correctPass === guessPass) {
-        setUserData(logInData);
+    if (userData === null) {
+      const emailInput = prompt("Enter your email");
+      let response = await fetch(
+        `http://localhost:3000/api/cards/?email=${emailInput}`,
+        {
+          method: "GET",
+          headers: {},
+        }
+      );
+      let data = await response.json();
+      if (data.payload === undefined) {
+        alert("This email doesn't have a card");
       } else {
-        alert("Wrong password");
+        let correctPass = data.payload.password;
+        let logInData = await data.payload;
+        const guessPass = prompt("Enter your password");
+        if (correctPass === guessPass) {
+          setUserData(logInData);
+        } else {
+          alert("Wrong password");
+        }
       }
+    } else {
+      setUserData(null);
     }
   }
 
-  return (
-    <div className="discoverPage">
-      <div className="discoverBody">
-        <div className="discoverTitle">
-          <h1>Discover Cards</h1>
+  if (userData === null) {
+    return (
+      <div className="discoverPage">
+        <div className="discoverBody">
+          <div className="discoverTitle">
+            <h1>Discover Cards</h1>
+          </div>
+          <div className="discoverTitle2">
+            <h2>Network with your peers!</h2>
+          </div>
+          <div className="discoverBodyText">
+            <p>Create a card so fellow bootcampers can find you.</p>
+            <p>Search for a bootcamper and connect with them.</p>
+          </div>
+          <div className="searchInput">
+            <input
+              type="text"
+              className="inputSearch"
+              placeholder="Search By Name"
+              onKeyDown={async (e) => {
+                await handleKeyDown(e);
+              }}
+            />
+          </div>
         </div>
-        <div className="discoverTitle2">
-          <h2>Network with your peers!</h2>
+        <div className="cardDisplay">
+          <div className="createBtn">
+            <Button handleClick={handleClick} buttonText={"+ New Card"} />
+            <Button handleClick={pressLogIn} buttonText={"Log In and Edit"} />
+          </div>
+          <div className="discoverCardContainer">
+            {cards.map((card, i) => (
+              <DiscoverCard key={i} info={card} />
+            ))}
+          </div>
         </div>
-        <div className="discoverBodyText">
-          <p>Create a card so fellow bootcampers can find you.</p>
-          <p>Search for a bootcamper and connect with them.</p>
-        </div>
-        <div className="searchInput">
-          <input
-            type="text"
-            className="inputSearch"
-            placeholder="Search By Name"
-            onKeyDown={async (e) => {
-              await handleKeyDown(e);
-            }}
-          />
-        </div>
+        <div className="whiteBg"></div>
+        {/* <footer className='space'></footer> */}
       </div>
-      <div className="cardDisplay">
-        <div className="createBtn">
-          <Button handleClick={handleClick} buttonText={"+ New Card"} />
-          <Button handleClick={pressLogIn} buttonText={"Log In and Edit"} />
+    );
+  } else {
+    return (
+      <div className="discoverPage">
+        <div className="discoverBody">
+          <div className="discoverTitle">
+            <h1>Discover Cards</h1>
+          </div>
+          <div className="discoverTitle2">
+            <h2>Network with your peers!</h2>
+          </div>
+          <div className="discoverBodyText">
+            <p>Create a card so fellow bootcampers can find you.</p>
+            <p>Search for a bootcamper and connect with them.</p>
+          </div>
+          <div className="searchInput">
+            <input
+              type="text"
+              className="inputSearch"
+              placeholder="Search By Name"
+              onKeyDown={async (e) => {
+                await handleKeyDown(e);
+              }}
+            />
+          </div>
+          <div className="loggedInUser">
+            <DiscoverCard key={1000} info={userData} />
+          </div>
         </div>
-        <div className="discoverCardContainer">
-          {cards.map((card, i) => (
-            <DiscoverCard key={i} info={card} />
-          ))}
+
+        <div className="cardDisplay">
+          <div className="createBtn">
+            <Button handleClick={handleClick} buttonText={"+ New Card"} />
+            <Button handleClick={pressLogIn} buttonText={"Log Out"} />
+          </div>
+          <div className="discoverCardContainer">
+            {cards.map((card, i) => (
+              <DiscoverCard key={i} info={card} />
+            ))}
+          </div>
         </div>
+        <div className="whiteBg"></div>
       </div>
-      <div className="whiteBg"></div>
-      {/* <footer className='space'></footer> */}
-    </div>
-  );
+    );
+  }
 }

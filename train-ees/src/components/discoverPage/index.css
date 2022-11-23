@@ -120,17 +120,6 @@ div.purpleSection img {
 
 .inputSearch:hover {
     transition: 0.5s;
-    border: 5px solid rgb(211, 66, 167);
+    border: 5px solid #D2252E;
     outline: 0;
 }
-
-/* @-webkit-keyframes AnimationName {
-    0%{background-position:0% 0%}
-    50%{background-position:93% 100%}
-    100%{background-position:0% 0%}
-}
-@keyframes AnimationName {
-    0%{background-position:0% 0%}
-    50%{background-position:93% 100%}
-    100%{background-position:0% 0%}
-} */

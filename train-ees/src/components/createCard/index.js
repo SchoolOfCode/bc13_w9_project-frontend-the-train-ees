@@ -39,9 +39,9 @@ export default function CreateCard(props){
                     <div className='email'>
                         <img src={email} alt="email" /><input type='text' placeholder='email' onChange={(e) => { props.emailChange(e.target.value) }} />
                     </div>
-                    <div className="profilePicture">
-                        <img src={image} onClick={handleClick} alt="profile pic" style={{cursor:'pointer'}}/>
-                    </div>
+                </div>
+                <div className="profilePicture">
+                    <img src={image} onClick={handleClick} alt="profile pic" style={{cursor:'pointer'}}/>
                 </div>
             </div>
         </div>

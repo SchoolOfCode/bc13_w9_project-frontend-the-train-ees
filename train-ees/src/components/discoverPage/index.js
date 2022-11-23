@@ -61,6 +61,20 @@ export default function DiscoverPage({ handleClick }) {
     }
   }
 
+  async function deleteUser() {
+    // make fetch request to delete using id
+    let response = await fetch(
+      `http://localhost:3000/api/cards/${userData.card_id}`,
+      {
+        method: "DELETE",
+        headers: {},
+      }
+    );
+    let data = await response.json();
+    // reset userData to null
+    setUserData(null);
+  }
+
   if (userData === null) {
     return (
       <div className="discoverPage">
@@ -127,6 +141,9 @@ export default function DiscoverPage({ handleClick }) {
           </div>
           <div className="loggedInUser">
             <DiscoverCard key={1000} info={userData} />
+          </div>
+          <div className="updateButton">
+            <Button handleClick={deleteUser} buttonText={"Delete your card"} />
           </div>
         </div>
 

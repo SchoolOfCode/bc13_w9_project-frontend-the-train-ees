@@ -72,8 +72,8 @@ div.cardDisplay {
 }
 
 div.cardDisplay > div.createBtn {
-    padding: 15vh 0px 20px 21vw;
-    justify-content: right;
+    padding-left: 25vw;
+    padding-top: 14vh;
 }
 
 /* Discover Card Container */

@@ -42,23 +42,40 @@ export default function CreatePage({ handleClickSubmit }){
         return await data.success;
     }
 
+    
+
     return(
-        <div className="CreatePage">
-            <h1>Create Cards</h1>
-            <div className="CreateBody">
-                <h2>Network with your peers!</h2>
-                <p>Create a card so fellow bootcampers can find you.</p>
-                <p>Search for a bootcamper and connect with them.</p>
+        <div className="discoverPage">
+            <div className="discoverBody">
+                <div className="discoverTitle">
+                    <h1>Create Cards</h1>
+                </div>
+                <div className='discoverTitle2'>
+                    <h2>Network with your peers!</h2>
+                </div>
+                <div className='discoverBodyText'>
+                    <p>Create a card so fellow bootcampers can find you.</p>
+                    <p>Search for a bootcamper and connect with them.</p>
+                <div className='backButton'>
+                    <Button handleClick={handleClickSubmit} buttonText={'Back'} />
+                </div>
+                </div>
             </div>
-            <Button handleClick={async()=>{await handleClick()}} buttonText={'Submit'} />
-            <CreateCard firstNameChange={setFirstName}
-                        lastNameChange = {setLastName}
-                        linkedinChange = {setLinkedin}
-                        githubChange = {setGithub}
-                        phoneChange = {setPhone}
-                        emailChange = {setEmail}
-                        imageChange = {setImage}
-            />
+            <div className='cardDisplay'>
+                <div className='createBtn'>
+                    <Button handleClick={async()=>{await handleClick()}} buttonText={'Submit'} />
+                </div>
+                <div className='discoverCardContainer'>
+                    <CreateCard firstNameChange={setFirstName}
+                                lastNameChange = {setLastName}
+                                linkedinChange = {setLinkedin}
+                                githubChange = {setGithub}
+                                phoneChange = {setPhone}
+                                emailChange = {setEmail}
+                                imageChange = {setImage}
+                    />
+                </div>
+            </div>
         </div>
     )
 }

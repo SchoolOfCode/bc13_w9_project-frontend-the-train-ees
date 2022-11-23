@@ -45,6 +45,15 @@ div.CreateBody>div.searchInput {
     margin-top: 5rem;
 }
 
+div.cardDisplay > div.backButton {
+    margin-top: 4vh;
+}
+
+div.createBtn {
+    display: flex;
+    flex-flow: row-reverse nowrap;
+}
+
 /* Card */
 
 div.cardDisplay {
@@ -101,8 +110,8 @@ div.purpleSection img {
     outline: 0;
 }
 
-.inputSearch:hover {
+/* .inputSearch:hover {
     transition: 0.5s;
     border: 5px solid rgb(211, 66, 167);
     outline: 0;
-}
+} */

@@ -57,14 +57,16 @@ export default function CreatePage({ handleClickSubmit }){
                 <div className='discoverBodyText'>
                     <p>Create a card so fellow bootcampers can find you.</p>
                     <p>Search for a bootcamper and connect with them.</p>
-                <div className='backButton'>
-                    <Button handleClick={handleClickSubmit} buttonText={'Back'} />
-                </div>
                 </div>
             </div>
             <div className='cardDisplay'>
                 <div className='createBtn'>
-                    <Button handleClick={async()=>{await handleClick()}} buttonText={'Submit'} />
+                    <div className='submitBtn'>
+                        <Button handleClick={async()=>{await handleClick()}} buttonText={'Submit'} />
+                    </div>
+                    <div className='backButton'>
+                        <Button handleClick={handleClickSubmit} buttonText={'Back'} />
+                    </div>
                 </div>
                 <div className='discoverCardContainer'>
                     <CreateCard firstNameChange={setFirstName}

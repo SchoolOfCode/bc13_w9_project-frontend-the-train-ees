@@ -20,7 +20,7 @@
       linear-gradient(rgb(255, 255, 255) 0 0) padding-box,
       linear-gradient(to right, #9c20aa, #fb3570) border-box;
     color: #313149;
-    border: 5px solid transparent;
+    border: 3px solid transparent;
     border-radius: 15px;
 }
 
@@ -84,7 +84,7 @@ div.cardDisplay {
 }
 
 div.cardDisplay > div.createBtn {
-    padding-left: 25vw;
+    padding-left: 300px;
     padding-top: 14vh;
 }
 
@@ -125,22 +125,27 @@ div.purpleSection img {
 
 .inputSearch{
     width: 28rem;
-    height: 3rem;
+    height: 3.2rem;
     padding-left: 2px;
-    font-size: 16px;
+    font-size: 20px;
     background: rgb(255, 255, 255) url('../images/search.png') right no-repeat, linear-gradient(to right, #9c20aa, #fb3570) border-box;
     background-size: 30px;
     background-position: 90%;
     background-origin: border-box;
 	background-clip: content-box, border-box;
 	background-size: cover;
-    box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.5);
-    transition: 0.5s;
+    box-shadow: 0px 0px 7px 2px rgba(195, 65, 221, 0.5);
+    transition: 0.3s;
     outline: 0;
 }
 
-.inputSearch:hover {
+/* .inputSearch:hover {
     transition: 0.5s;
-    border: 5px solid rgba(39, 39, 39, 0.425);
+    border: 3px solid rgba(255, 255, 255, 0.548);
     outline: 0;
+} */
+
+.inputSearch:hover {
+    transition: 0.3s;
+    box-shadow: 0px 0px 10px 4px rgba(195, 65, 221, 0.788);
 }

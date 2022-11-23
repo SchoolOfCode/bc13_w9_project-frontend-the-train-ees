@@ -24,6 +24,7 @@ export default function CreateCard(props){
             <div className='cardHeader'>
                 <input type='text' placeholder='first name' onChange={(e)=>{props.firstNameChange(e.target.value)}}/>
                 <input type='text' placeholder='last name' onChange={(e) => {props.lastNameChange(e.target.value) }} />
+                <input type='text' placeholder='profession' onChange={(e) => { props.professionChange(e.target.value) }} />
             </div>
             <div className='cardBody'>
                 <div className='mediaItems'>

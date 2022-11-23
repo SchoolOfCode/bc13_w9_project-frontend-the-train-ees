@@ -42,6 +42,7 @@ export default function CreatePage({ handleClickSubmit }) {
     });
     handleClickSubmit();
     let data = await response.json();
+    console.log(data);
     return await data.success;
   }
 

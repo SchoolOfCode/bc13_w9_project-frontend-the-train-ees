@@ -19,8 +19,6 @@ export default function DiscoverPage({ handleClick }) {
     );
     let data = await response.json();
     setCards(data.payload);
-    // add userData to front of cards
-    setCards([userData, ...cards]);
   }
 
   async function handleKeyDown(e) {
@@ -38,18 +36,24 @@ export default function DiscoverPage({ handleClick }) {
   async function pressLogIn() {
     const emailInput = prompt("Enter your email");
     let response = await fetch(
-      `http://localhost:3000/api/?email=${emailInput}`,
+      `http://localhost:3000/api/cards/?email=${emailInput}`,
       {
         method: "GET",
         headers: {},
       }
     );
     let data = await response.json();
-    let correctPass = await data.payload.password;
-    let logInData = await data.payload;
-    const guessPass = prompt("Enter your password");
-    if (correntPass === guessPass) {
-      setUserData(logInData);
+    if (data.payload === undefined) {
+      alert("This email doesn't have a card");
+    } else {
+      let correctPass = data.payload.password;
+      let logInData = await data.payload;
+      const guessPass = prompt("Enter your password");
+      if (correctPass === guessPass) {
+        setUserData(logInData);
+      } else {
+        alert("Wrong password");
+      }
     }
   }
 

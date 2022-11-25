@@ -145,10 +145,11 @@ export default function DiscoverPage({ handleClick }) {
           </div>
           <div className="loggedInUser">
             <DiscoverCard key={1000} info={userData} />
-          </div>
-          <div className="updateButton">
             <Button handleClick={deleteUser} buttonText={"Delete your card"} />
           </div>
+          {/* <div className="updateButton">
+            <Button handleClick={deleteUser} buttonText={"Delete your card"} />
+          </div> */}
         </div>
 
         <div className="cardDisplay">

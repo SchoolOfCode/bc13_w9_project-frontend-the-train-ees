@@ -3,10 +3,10 @@
     /* padding: 30px; */
     padding-right: 0;
     margin-right: 0;
-    background-image: linear-gradient(-30deg, #E84F7C, #C77A76, #682FE5);
+    background-image: linear-gradient(-800deg, #E84F7C, #C77A76, #682FE5);
     background-repeat: no-repeat;
     background-position: top right;
-    background-size: 30% 150%;
+    background-size: 100;
     -webkit-animation: AnimationName 47s ease infinite;
     animation: AnimationName 47s ease infinite;
     border-top-left-radius: 30px;
@@ -22,6 +22,7 @@
     color: #313149;
     border: 3px solid transparent;
     border-radius: 15px;
+    padding: 2px;
 }
 
 /* Discover Page */
@@ -110,6 +111,16 @@ div.searchInput > img {
     margin-top: 1.4rem;
 }
 
+/* Logged in user */
+
+div.discoverBody > div.loggedInUser {
+    margin-top: 5rem;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
 /* Purple Section */
 /* 
 div.purpleSection {
@@ -124,10 +135,9 @@ div.purpleSection img {
     border-radius: 30px 0px 0px 30px;
 } */
 
-.inputSearch{
+.inputSearch {
     width: 28rem;
     height: 3.2rem;
-    padding-left: 2px;
     font-size: 20px;
     background: rgb(255, 255, 255) url('../images/search.png') right no-repeat, linear-gradient(to right, #9c20aa, #fb3570) border-box;
     background-size: 30px;
@@ -138,6 +148,7 @@ div.purpleSection img {
     box-shadow: 0px 0px 7px 2px rgba(195, 65, 221, 0.5);
     transition: 0.3s;
     outline: 0;
+    padding: 2px;
 }
 
 /* .inputSearch:hover {

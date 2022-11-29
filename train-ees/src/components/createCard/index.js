@@ -4,18 +4,18 @@ import email from "../images/email.png";
 import phone from "../images/phone.png";
 import github from "../images/github.png";
 import linkedin from "../images/linkedin.png";
-//import user from '../images/user.png'
 import plus from "../images/plus icon.png";
 import { useState } from "react";
 
-export default function CreateCard(props) {
+export default function CreateCard({cardInfoChange, cardInfo}) {
   const [image, setImage] = useState(plus);
-
+  console.log(cardInfo)
   function handleClick() {
     let url = prompt("Enter url to Linkedin profile picture");
     if (url !== null || url === "" || url === " ") {
       setImage(url);
-      props.imageChange(url);
+      cardInfo.image = url
+      cardInfoChange(cardInfo)
     }
   }
 
@@ -26,21 +26,22 @@ export default function CreateCard(props) {
           type="text"
           placeholder="first name"
           onChange={(e) => {
-            props.firstNameChange(e.target.value);
+            cardInfoChange({...cardInfo, ...{first_name:e.target.value}})
           }}
         />
         <input
           type="text"
           placeholder="last name"
           onChange={(e) => {
-            props.lastNameChange(e.target.value);
+            cardInfo.last_name = e.target.value
+            cardInfoChange(cardInfo)
           }}
         />
         <input
           type="text"
           placeholder="profession"
           onChange={(e) => {
-            props.professionChange(e.target.value);
+            cardInfoChange({ ...cardInfo, ...{ profession: e.target.value } })
           }}
         />
       </div>
@@ -53,7 +54,8 @@ export default function CreateCard(props) {
               type="text"
               placeholder="linkedin link"
               onChange={(e) => {
-                props.linkedinChange(e.target.value);
+                cardInfo.linkedin_username = e.target.value
+                cardInfoChange(cardInfo)
               }}
             />
           </div>
@@ -64,7 +66,7 @@ export default function CreateCard(props) {
               type="text"
               placeholder="github"
               onChange={(e) => {
-                props.githubChange(e.target.value);
+                cardInfoChange({ ...cardInfo, ...{ github_username: e.target.value } })
               }}
             />
           </div>
@@ -75,7 +77,8 @@ export default function CreateCard(props) {
               type="text"
               placeholder="phone"
               onChange={(e) => {
-                props.phoneChange(e.target.value);
+                cardInfo.phone = e.target.value
+                cardInfoChange(cardInfo)
               }}
             />
           </div>
@@ -86,7 +89,7 @@ export default function CreateCard(props) {
               type="text"
               placeholder="email"
               onChange={(e) => {
-                props.emailChange(e.target.value);
+                cardInfoChange({ ...cardInfo, ...{ email: e.target.value } })
               }}
             />
           </div>
@@ -107,7 +110,8 @@ export default function CreateCard(props) {
           type="text"
           placeholder="password"
           onChange={(e) => {
-            props.passwordChange(e.target.value);
+            cardInfo.password = e.target.value
+            cardInfoChange(cardInfo)
           }}
         />
       </div>

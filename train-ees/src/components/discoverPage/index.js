@@ -2,22 +2,23 @@ import "./index.css";
 import Button from "../button";
 import DiscoverCard from "../discoverCard";
 import { useState } from "react";
-// import search from "../images/search.png";
-//import backgroundGif from '../images/purple_BG.gif'
+import React from "react";
+import env from "react-dotenv";
 
 export default function DiscoverPage({ handleClick }) {
   const [cards, setCards] = useState([{}]);
   const [userData, setUserData] = useState(null);
 
+  console.log(process.env.REACT_APP_FETCH_URL)
   async function getCards(input) {
-    //console.log(input)
     let response = await fetch(
-      `http://localhost:3000/api/cards?name=${input}`,
+      `${env.URL}/api/cards?name=${input}`,
       {
         method: "GET",
       }
     );
     let data = await response.json();
+
     if (data.payload.length === 0) {
       setCards([{}]);
     } else {
@@ -42,7 +43,7 @@ export default function DiscoverPage({ handleClick }) {
     if (userData === null) {
       const emailInput = prompt("Enter your email");
       let response = await fetch(
-        `http://localhost:3000/api/cards/?email=${emailInput}`,
+        `${ process.env.FETCH_URL }/api/cards/?email=${emailInput}`,
         {
           method: "GET",
           headers: {},
@@ -78,6 +79,7 @@ export default function DiscoverPage({ handleClick }) {
     let data = await response.json();
     // reset userData to null
     setUserData(null);
+    return data;
   }
 
   if (userData === null) {

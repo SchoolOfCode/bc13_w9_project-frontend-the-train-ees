@@ -2,47 +2,33 @@ import { useState } from "react";
 import "./index.css";
 import CreateCard from "../createCard";
 import Button from "../button";
+import React from "react";
+import env from "react-dotenv";
 
 export default function CreatePage({ handleClickSubmit }) {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [linkedin, setLinkedin] = useState("");
-  const [github, setGithub] = useState("");
-  const [phone, setPhone] = useState("");
-  const [email, setEmail] = useState("");
-  const [image, setImage] = useState("");
-  const [profession, setProfession] = useState("");
-  const [password, setPassword] = useState("");
+
+  const [cardInfo, setCardInfo] = useState({ 
+    first_name : "",
+    last_name : "",
+    linkedin_username : "",
+    github_username : "",
+    phone : "",
+    email : "",
+    image : "",
+    profession : "",
+    password : ""
+})
 
   async function handleClick() {
-    /*console.log({
-            first_name: firstName,
-            last_name: lastName,
-            linkedin_username: linkedin,
-            github_username: github,
-            phone: phone,
-            email: email,
-        })*/
-    let response = await fetch("http://localhost:3000/api/cards", {
+    let response = await fetch(`${env.URL}/api/cards`, {
       method: "POST",
-      body: JSON.stringify({
-        first_name: `${firstName[0].toUpperCase() + firstName.slice(1)}`,
-        last_name: `${lastName[0].toUpperCase() + lastName.slice(1)}`,
-        linkedin_username: `${linkedin}`,
-        github_username: `${github}`,
-        profession: `${profession}`,
-        phone: `${phone}`,
-        email: `${email}`,
-        image: `${image}`,
-        password: `${password}`,
-      }),
+      body: JSON.stringify(cardInfo),
       headers: {
         "Content-Type": "application/json",
       },
     });
     handleClickSubmit();
     let data = await response.json();
-    console.log(data);
     return await data.success;
   }
 
@@ -74,15 +60,8 @@ export default function CreatePage({ handleClickSubmit }) {
         </div>
         <div className="discoverCardContainer">
           <CreateCard
-            firstNameChange={setFirstName}
-            lastNameChange={setLastName}
-            linkedinChange={setLinkedin}
-            githubChange={setGithub}
-            phoneChange={setPhone}
-            emailChange={setEmail}
-            imageChange={setImage}
-            professionChange={setProfession}
-            passwordChange={setPassword}
+            cardInfoChange={setCardInfo}
+            cardInfo = {cardInfo}
           />
 
         </div>

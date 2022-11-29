@@ -1,4 +1,6 @@
 import "./index.css";
+
+// import symbols for card
 import email from "../images/email.png";
 import phone from "../images/phone.png";
 import github from "../images/github.png";
@@ -42,9 +44,13 @@ export default function DiscoverCard({ info }) {
       </div>
     );
   } else {
+
+    // checks if the cards has a profile image, if doesnt, show default grey person
     if (info.image === null || info.image.length <= 0) {
       info.image = user;
     }
+
+    // shows card with the info (passes in from prop)
     return (
       <div className="discoverCard">
         <div className="cardHeader">

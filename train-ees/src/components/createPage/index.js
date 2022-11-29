@@ -7,6 +7,7 @@ import env from "react-dotenv";
 
 export default function CreatePage({ handleClickSubmit }) {
 
+  // state holds info of create-card (when the user inputs their info for a new card)
   const [cardInfo, setCardInfo] = useState({ 
     first_name : "",
     last_name : "",
@@ -19,6 +20,7 @@ export default function CreatePage({ handleClickSubmit }) {
     password : ""
 })
 
+  // submit button function - posts inputted data to backend/DB
   async function handleClick() {
     let response = await fetch(`${env.URL}/api/cards`, {
       method: "POST",
@@ -27,11 +29,13 @@ export default function CreatePage({ handleClickSubmit }) {
         "Content-Type": "application/json",
       },
     });
+    // function changes page
     handleClickSubmit();
     let data = await response.json();
     return await data.success;
   }
 
+   // the create page
   return (
     <div className="discoverPage">
       <div className="discoverBody">

@@ -32,6 +32,7 @@ export default function DiscoverPage({ handleClick }) {
     }
     let input = e.target.value;
     if (input === "" || input === " ") {
+        setCards([{}]);
       return;
     }
     await getCards(input);

@@ -1,3 +1,7 @@
+//import { cy } from 'cypress';
+
+import CreatePage from "../../src/components/createPage";
+
 describe("Check Default card", () => {
   it("passes", () => {
     cy.visit("/");
@@ -14,3 +18,28 @@ describe("Check Default card", () => {
     );
   });
 });
+
+describe("Check search input", () => {
+  it("passes", () => {
+    cy.visit("/");
+    cy.get('.searchInput>input').type('ben{enter}');
+    cy.get(".cardHeader>h1").contains("Ben Lloyd");
+    cy.get(".cardHeader>p").contains("Full Stack Engineer");
+    cy.get(".linkedin>h2").contains("benll6yd");
+    cy.get(".github>h2").contains("conwys");
+    cy.get(".phone>h2").contains("+44 7000 0000");
+    cy.get(".email>h2").contains("ben@ben.com");
+    cy.get(".profilePicture > img").should(
+      "have.attr",
+      "src",
+      `https://media-exp1.licdn.com/dms/image/D4E03AQGAm-_-96TjdQ/profile-displayphoto-shrink_200_200/0/1669112547798?e=1674691200&v=beta&t=VCofBoCgez1pWbi1LbA9N_C7w_7RHUN0cx53NEGiEQI`    );
+  });
+});
+
+describe("Check new card inputs", () => {
+  it("passes", () => {
+    cy.visit("/");
+    cy.get('.createBtn>button').contains('+ New Card').click();
+    //cy.get('discoverTitle>h1').contains('Create Cards');
+  })
+})

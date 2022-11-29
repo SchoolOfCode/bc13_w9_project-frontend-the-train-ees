@@ -5,7 +5,6 @@ The application allows users to create and view 'Digital Networking Cards', whic
 users to easily connect with peers.
 
 - ReactJS
-- NodeJS
 
 ## Authors
 

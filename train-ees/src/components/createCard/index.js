@@ -9,7 +9,8 @@ import { useState } from "react";
 
 export default function CreateCard({cardInfoChange, cardInfo}) {
   const [image, setImage] = useState(plus);
-  console.log(cardInfo)
+
+  // shows prompt to input image url
   function handleClick() {
     let url = prompt("Enter url to Linkedin profile picture");
     if (url !== null || url === "" || url === " ") {
@@ -19,6 +20,8 @@ export default function CreateCard({cardInfoChange, cardInfo}) {
     }
   }
 
+  // displays card with inputs
+  // so many divs to help with CSS layout
   return (
     <div className="discoverCard">
       <div className="cardHeader">

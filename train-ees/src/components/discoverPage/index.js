@@ -9,7 +9,7 @@ export default function DiscoverPage({ handleClick }) {
   const [cards, setCards] = useState([{}]);
   const [userData, setUserData] = useState(null);
 
-  console.log(process.env.REACT_APP_FETCH_URL)
+  // function gets card(s) from backend and updates card state
   async function getCards(input) {
     let response = await fetch(
       `${env.URL}/api/cards?name=${input}`,
@@ -70,7 +70,7 @@ export default function DiscoverPage({ handleClick }) {
   async function deleteUser() {
     // make fetch request to delete using id
     let response = await fetch(
-      `http://localhost:3000/api/cards/${userData.card_id}`,
+      `${env.URL}/api/cards/${userData.card_id}`,
       {
         method: "DELETE",
         headers: {},
@@ -82,6 +82,7 @@ export default function DiscoverPage({ handleClick }) {
     return data;
   }
 
+  // shows default card if user hasn't searched for anything
   if (userData === null) {
     return (
       <div className="discoverPage">
@@ -122,7 +123,7 @@ export default function DiscoverPage({ handleClick }) {
         {/* <footer className='space'></footer> */}
       </div>
     );
-  } else {
+  } else { // shows the search results if the use has searched for something
     return (
       <div className="discoverPage">
         <div className="discoverBody">

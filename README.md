@@ -13,7 +13,7 @@ users to easily connect with peers.
 - [Peter Metcalfe (@PeterM-13)](https://www.github.com/PeterM-13)
 - [Elspeth Brown (@Elspeth-57)](https://www.github.com/Elspeth-57)
 - [Roman Hadjisergis (@romanhadjisergis)](https://www.github.com/romanhadjisergis)
-- [Cameron Mynett (@cameronmynett)](https://www.github.com/cameronmynett)
+- [Cameron Mynett (@CameronMynett)](https://www.github.com/cameronmynett)
 
 
 ## Deployment

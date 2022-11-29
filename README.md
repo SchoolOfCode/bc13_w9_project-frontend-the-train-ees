@@ -33,6 +33,10 @@ To run the backend project (dependant on Nodemon):
 ```bash
   npm run dev
 ```
+
+`PORT` for both backend and frontend must be different (e.g `3001` on frontend, `3000` on backend)
+
+
 ## Environment Variables
 
 To run this project, you will need to add the following environment variables to your .env file:

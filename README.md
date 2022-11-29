@@ -5,7 +5,6 @@ The application allows users to create and view 'Digital Networking Cards', whic
 users to easily connect with peers.
 
 - ReactJS
-- NodeJS
 
 ## Authors
 
@@ -35,6 +34,12 @@ To run the backend project (dependant on Nodemon):
   npm run dev
 ```
 
+<<<<<<< HEAD
+=======
+`PORT` for both backend and frontend must be different (e.g `3001` on frontend, `3000` on backend)
+
+
+>>>>>>> ab46495bf53d68a8839aa45e9c935f99d3a9cfaa
 ## Environment Variables
 
 To run this project, you will need to add the following environment variables to your .env file:

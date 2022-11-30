@@ -63,11 +63,11 @@ export default function DiscoverCard({ info }) {
           <div className="mediaItems">
             <div className="linkedin">
               <img src={linkedin} alt="linkedin" />
-              <h2>{info.linkedin_username}</h2>
+              <a href={`https://www.linkedin.com/in/${info.linkedin_username}/`}>{info.linkedin_username}</a>
             </div>
             <div className="github">
               <img src={github} alt="github" />
-              <h2>{info.github_username}</h2>
+              <a href={`https://github.com/${info.github_username}/`}>{info.github_username}</a>
             </div>
             <div className="phone">
               <img src={phone} alt="phone" />

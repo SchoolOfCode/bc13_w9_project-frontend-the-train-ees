@@ -22,8 +22,8 @@ describe("Check search input", () => {
     cy.get('.searchInput>input').type('ben{enter}');
     cy.get(".cardHeader>h1").contains("Ben Lloyd");
     cy.get(".cardHeader>p").contains("Full Stack Engineer");
-    cy.get(".linkedin>h2").contains("benll6yd");
-    cy.get(".github>h2").contains("conwys");
+    cy.get(".linkedin>a").contains("benll6yd");
+    cy.get(".github>a").contains("conwys");
     cy.get(".phone>h2").contains("+44 7000 0000");
     cy.get(".email>h2").contains("ben@ben.com");
     cy.get(".profilePicture > img").should(
@@ -54,8 +54,8 @@ describe("Check new card inputs", () => {
     cy.get('.searchInput>input').type('john{enter}');
     cy.get(".cardHeader>h1").contains("John Doe");
     cy.get(".cardHeader>p").contains("Cleaner");
-    cy.get(".linkedin>h2").contains("john-doe");
-    cy.get(".github>h2").contains("johndoe");
+    cy.get(".linkedin>a").contains("john-doe");
+    cy.get(".github>a").contains("johndoe");
     cy.get(".phone>h2").contains("+44 7000 0000");
     cy.get(".email>h2").contains("john@doe.com");
     cy.get(".profilePicture > img").should(

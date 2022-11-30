@@ -34,17 +34,13 @@ To run the backend project (dependant on Nodemon):
   npm run dev
 ```
 
-<<<<<<< HEAD
-=======
-`PORT` for both backend and frontend must be different (e.g `3001` on frontend, `3000` on backend)
-
-
->>>>>>> ab46495bf53d68a8839aa45e9c935f99d3a9cfaa
 ## Environment Variables
 
-To run this project, you will need to add the following environment variables to your .env file:
+To run this project, you will need to add the following environment variables to your .env file in the train-ees folder:
 
-`FETCH_URL`
+`URL = http://localhost:3000`
+
+The `3000` should match the port of the backend.
 
 ## Acknowledgements
 

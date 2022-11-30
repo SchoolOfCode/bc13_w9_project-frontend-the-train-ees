@@ -115,3 +115,15 @@ div.cardBody > div.mediaItems > div > h2 {
     font-size: 20px;
     font-weight: 300;
 }
+
+a{
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 300;
+    background: -webkit-linear-gradient(right, #E84F7C, #682FE5);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 16.6px 0px;
+
+}

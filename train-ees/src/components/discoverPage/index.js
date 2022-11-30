@@ -11,12 +11,9 @@ export default function DiscoverPage({ handleClick }) {
 
   // function gets card(s) from backend and updates card state
   async function getCards(input) {
-    let response = await fetch(
-      `${env.URL}/api/cards?name=${input}`,
-      {
-        method: "GET",
-      }
-    );
+    let response = await fetch(`${env.URL}/api/cards?name=${input}`, {
+      method: "GET",
+    });
     let data = await response.json();
 
     if (data.payload.length === 0) {
@@ -33,7 +30,7 @@ export default function DiscoverPage({ handleClick }) {
     }
     let input = e.target.value;
     if (input === "" || input === " ") {
-        setCards([{}]);
+      setCards([{}]);
       return;
     }
     await getCards(input);
@@ -42,13 +39,10 @@ export default function DiscoverPage({ handleClick }) {
   async function pressLogIn() {
     if (userData === null) {
       const emailInput = prompt("Enter your email");
-      let response = await fetch(
-        `${ process.env.FETCH_URL }/api/cards/?email=${emailInput}`,
-        {
-          method: "GET",
-          headers: {},
-        }
-      );
+      let response = await fetch(`${env.URL}/api/cards/?email=${emailInput}`, {
+        method: "GET",
+        headers: {},
+      });
       let data = await response.json();
       if (data.payload === undefined) {
         alert("This email doesn't have a card");
@@ -69,13 +63,10 @@ export default function DiscoverPage({ handleClick }) {
 
   async function deleteUser() {
     // make fetch request to delete using id
-    let response = await fetch(
-      `${env.URL}/api/cards/${userData.card_id}`,
-      {
-        method: "DELETE",
-        headers: {},
-      }
-    );
+    let response = await fetch(`${env.URL}/api/cards/${userData.card_id}`, {
+      method: "DELETE",
+      headers: {},
+    });
     let data = await response.json();
     // reset userData to null
     setUserData(null);
@@ -123,7 +114,8 @@ export default function DiscoverPage({ handleClick }) {
         {/* <footer className='space'></footer> */}
       </div>
     );
-  } else { // shows the search results if the use has searched for something
+  } else {
+    // shows the search results if the use has searched for something
     return (
       <div className="discoverPage">
         <div className="discoverBody">

@@ -44,7 +44,6 @@ export default function DiscoverCard({ info }) {
       </div>
     );
   } else {
-
     // checks if the cards has a profile image, if doesnt, show default grey person
     if (info.image === null || info.image.length <= 0) {
       info.image = user;
@@ -63,11 +62,21 @@ export default function DiscoverCard({ info }) {
           <div className="mediaItems">
             <div className="linkedin">
               <img src={linkedin} alt="linkedin" />
-              <a href={`https://www.linkedin.com/in/${info.linkedin_username}/`}>{info.linkedin_username}</a>
+              <a
+                href={`https://www.linkedin.com/in/${info.linkedin_username}/`}
+                target="_blank"
+              >
+                {info.linkedin_username}
+              </a>
             </div>
             <div className="github">
               <img src={github} alt="github" />
-              <a href={`https://github.com/${info.github_username}/`}>{info.github_username}</a>
+              <a
+                href={`https://github.com/${info.github_username}/`}
+                target="_blank"
+              >
+                {info.github_username}
+              </a>
             </div>
             <div className="phone">
               <img src={phone} alt="phone" />

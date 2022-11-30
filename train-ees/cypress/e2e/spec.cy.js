@@ -40,6 +40,6 @@ describe("Check new card inputs", () => {
   it("passes", () => {
     cy.visit("/");
     cy.get('.createBtn>button').contains('+ New Card').click();
-    //cy.get('discoverTitle>h1').contains('Create Cards');
+    cy.get('.discoverTitle>h1').contains('Create Cards');
   })
 })

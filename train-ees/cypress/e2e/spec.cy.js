@@ -65,3 +65,34 @@ describe("Check new card inputs", () => {
     )
   })
 });
+
+/*
+describe("Check if you can login and delete card", () => {
+  it("passes", () => {
+    cy.visit("/");
+    
+    // cy.window().then(function (promptelement) {
+    //   cy.stub(promptelement, "prompt").returns('john@doe.com');
+    //   cy.get('#prompt-button').click()
+    //   cy.get('.createBtn > button:last-child').click()
+
+    // }).then((promptelement2)=>{
+    //   cy.stub(promptelement2, "prompt").returns('pass');
+    // })
+
+    const mod = {
+      doit: () => 'done'
+    }
+    let call = 0
+    const fakes = ['john@doe.com']
+    cy.stub(mod, 'doit').callsFake(() => {
+      return fakes[call++]
+    })
+
+    console.log(mod.doit())  // done1
+    //console.log(mod.doit())  // done2
+  })
+
+  //})
+});
+*/

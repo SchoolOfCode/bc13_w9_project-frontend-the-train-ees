@@ -40,7 +40,7 @@ To run this project, you will need to add the following environment variables to
 
 `URL = http://localhost:3000`
 
-The `3000` should match the port of the beckend.
+The `3000` should match the port of the backend.
 
 ## Acknowledgements
 
